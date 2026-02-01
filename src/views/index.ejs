@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title || 'JodSpace - Collaborative Editor' %></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header-item logo">JodSpace</div>
+        <div class="header-item tagline">Shared Note</div>
+      </header>
+      <div class="main-content">
+        <div class="editor-section">
+          <textarea
+            id="editor"
+            class="editor"
+            placeholder="Start typing..."
+          ></textarea>
+        </div>
+
+        <!-- Chat -->
+        <aside class="chat-section">
+          <div class="header-item online-users">
+            <span id="user-count">1 Online User</span>
+          </div>
+          <div id="chat-messages" class="chat-messages">
+            <!-- Chat messages will appear here -->
+          </div>
+          <div class="chat-input-wrapper">
+            <input
+              type="text"
+              id="chat-input"
+              class="chat-input"
+              placeholder="Type a message..."
+              autocomplete="off"
+            />
+          </div>
+        </aside>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

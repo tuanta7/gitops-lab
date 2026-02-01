@@ -1,0 +1,33 @@
+{
+  "name": "jodspace",
+  "version": "1.0.0",
+  "description": "A collaborative editor.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuanta7/jodspace.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tuanta7/jodspace/issues"
+  },
+  "homepage": "https://github.com/tuanta7/jodspace#readme",
+  "dependencies": {
+    "@types/ejs": "^3.1.5",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
