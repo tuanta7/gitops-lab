@@ -11,11 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set SHORT_SHA environment variable
         run: echo "SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
+
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag ${{ vars.IMAGE_NAME }}:$SHORT_SHA
+
       - run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
       - name: Push the image to DockerHub
         run: docker push ${{ vars.IMAGE_NAME }}:$SHORT_SHA
 
@@ -30,12 +34,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configure Git
+      - name: Set SHORT_SHA environment variable
+        run: echo "SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
+
+      - name: Retag
+        run: .github/retag.sh $SHORT_SHA
+
+      - name: Configure git
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.7.0
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Push changes
+        run: git push
