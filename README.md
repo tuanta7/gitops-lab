@@ -1,6 +1,9 @@
-# Jodspace
+# GitOps Lab
 
 [![CI](https://github.com/tuanta7/jodspace/actions/workflows/jodspace.yml/badge.svg?branch=main)](https://github.com/tuanta7/jodspace/actions/workflows/jodspace.yml)
+
+> [!TIP]
+> To disable direct pushes to protected branches, enable the Require a pull request before merging rule. Specify the target branches and ensure the rule is enforced to prevent direct commits.
 
 Jodspace is a small collaborative editor built as a demonstration project. This demo primarily focuses on:
 
