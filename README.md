@@ -1,6 +1,7 @@
 # GitOps Lab
 
-[![CI](https://github.com/tuanta7/jodspace/actions/workflows/jodspace.yml/badge.svg?branch=main)](https://github.com/tuanta7/jodspace/actions/workflows/jodspace.yml)
+[![Test](https://github.com/tuanta7/jodspace/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/tuanta7/jodspace/actions/workflows/test.yml)
+[![Build](https://github.com/tuanta7/jodspace/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/tuanta7/jodspace/actions/workflows/build.yml)
 
 > [!TIP]
 > To disable direct pushes to protected branches, enable the Require a pull request before merging rule. Specify the target branches and ensure the rule is enforced to prevent direct commits.
