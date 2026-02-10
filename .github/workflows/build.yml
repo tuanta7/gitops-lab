@@ -54,6 +54,7 @@ jobs:
 
       - name: Push changes
         run: |
+          git switch deploy || git switch -c deploy
           git add .
           git commit -m "Update values.yml"
-          git push
+          git push origin deploy
